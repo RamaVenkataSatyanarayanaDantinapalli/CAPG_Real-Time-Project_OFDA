@@ -1,0 +1,42 @@
+<body>
+<button class="btn btn-primary" (click)="doLogin()">Login</button>
+<button class="btn btn-primary" (click)="doRegister()">Register</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<h1><u>Login</u></h1>
+<div class="container">
+  
+    <form #loginApp="ngForm" (ngSubmit) ="onSubmit()">
+        <br>
+      <div>
+          <label><h2>UserName</h2></label>
+          <input type="text" (keyup)="getUser()" placeholder="Enter UserName" class="form-control" id="userNameId" name="userName" [(ngModel)]="login.userName" #name="ngModel" required/>
+      <br>
+      <span *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+        <span *ngIf="name.errors?.['required']" class="alert">
+          UserName is required.
+        </span>
+        </span>
+      </div>
+        <div>
+          <label><h2>Password</h2></label>
+          <br>
+          <input type="password" placeholder="Enter Password" class="form-control" id="passwordId" name="password" 
+          [(ngModel)]="login.password" #password="ngModel" required>
+          <br>
+          <span *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+            <span *ngIf="password.errors?.['required']" class="alert">
+              Password is required.
+            </span>
+            </span>
+        </div>
+       
+     
+      <div class="container">
+        <br>
+          <button mat-button type="submit" style="background-color:green; float: left; font-size: 22px; margin-left: 36%;" [disabled]="loginApp.form.invalid" id="btn" value="Login"  class="btn btn-primary">Login</button>&nbsp;&nbsp;
+          <button type="reset" style="background-color:blue; float: left; font-size: 22px; margin-left:2%;" id="btn" value="Reset"  class="btn btn-primary">Reset</button>
+        </div>
+        <br>
+        <br><br><br>
+      </form>
+    </div>
+  </body>
