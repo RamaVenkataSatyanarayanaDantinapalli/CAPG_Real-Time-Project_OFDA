@@ -1,0 +1,52 @@
+<body>
+    <button class="btn btn-primary" (click)="goToHome()">Home</button>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+<h2><u>View Items By Name</u></h2>
+<div class="eform">
+    <form #courseApp="ngForm" (ngSubmit) ="onSubmit()">
+        <br>
+        <div>
+            <label><h2>Item Name</h2></label>
+            <br>
+            <input type="text" (keyup)="onSubmit()" placeholder="Enter Item Name" class="form-control" id="restaurantNameId" name="restaurantName" 
+            [(ngModel)]="item.itemName" #name="ngModel" required>
+            <br>
+            <span *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+              <span *ngIf="name.errors?.['required']" class="alert">
+                Item Name is required.
+              </span>
+              </span>
+          </div>
+      <!--<div class="container">
+        <br>
+          <button type="submit" style="background-color:green; float: left; font-size: 22px; margin-left: 40%;" [disabled]="courseApp.form.invalid" id="btn" value="Search"  class="btn btn-primary">Search</button>&nbsp;&nbsp;
+          <button type="reset"  style="background-color:blue; float: left; font-size: 22px; margin-left:2%;" id="btn" value="Reset"  class="btn btn-primary">Reset</button>
+        </div>-->
+        <br>
+    </form>
+</div>
+<div class="eform">
+    <table class="table table-striped">
+        <thead class="thread-light">
+        <tr>
+            <th>Item_ID</th>
+            <th>Item_Name</th>
+            <th>Category</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+   <tr *ngFor="let item of items | paginate:{ id:'abc',itemsPerPage:6,currentPage:page,totalItems:totalRecords}">
+    <td><h4>{{item.itemId}}</h4></td>
+    <td><h4>{{item.itemName}}</h4></td>
+    <td><h4>{{item.category}}</h4></td>
+    <td><h4>{{item.cost}}</h4></td>
+        <td><button class="btn btn-primary" style="background-color:green" (click)="doUpdateItem(item)">Update</button></td>
+    <td><button class="btn btn-primary" style="background-color:red" (click)="doRemoveItem(item.itemId)">Delete</button></td>
+    <td><button class="btn btn-primary" style="background-color:blue" (click)="getItemByID(item.itemId)">View</button></td>
+    </tr>
+    </table>
+</div>
+<div class="col-md-10 offset-md-4">
+    <pagination-controls id="abc" maxSixe="10" directionLink="true" (pageChange)="page=$event"></pagination-controls>
+</div>
+</body>

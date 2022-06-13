@@ -1,0 +1,32 @@
+<body>
+    <button class="btn btn-primary" (click)="goToHome()">Home</button>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+<h2><u>View Item</u></h2>
+<div class="eform">
+    <table class="table table-striped">
+        <thead class="thread-light">
+        <tr>
+            <th>Item_ID</th>
+            <th>Item_Name</th>
+            <th>Category</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+   <tr *ngFor="let item of items | paginate:{ id:'abc',itemsPerPage:6,currentPage:page,totalItems:totalRecords}">
+        <td><h4>{{item.itemId}}</h4></td>
+        <td><h4>{{item.itemName}}</h4></td>
+        <td><h4>{{item.category}}</h4></td>
+        <td><h4>{{item.cost}}</h4></td>
+    </tr>
+    </table>
+</div>
+<div class="col-md-10 offset-md-4">
+    <pagination-controls id="abc" maxSixe="10" directionLink="true" (pageChange)="page=$event"></pagination-controls>
+</div>
+<!--<div class="container">
+<label><h1>Item ID:</h1></label>{{item.itemId}}<br>
+<label><h1>Item Name:</h1></label>{{item.itemName}}<br>
+<label><h1>Category:</h1></label>{{item.category}}<br>
+<label><h1>Cost:</h1></label>{{item.cost}}
+</div>-->
+</body>

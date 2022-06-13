@@ -1,0 +1,70 @@
+<body>
+  <button class="btn btn-primary" style="background-color:blue; float: left; font-size: 22px;" (click)="goToHome()">Home</button>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+<h2><u>Update Item</u></h2>
+<div class="col-md-8 offset-md-3">
+
+  
+    <form #courseApp="ngForm" (ngSubmit) ="onSubmit()">
+        <br>
+      <div>
+          <label><h2>Item ID</h2></label>
+          <input type="number" placeholder="Enter Item ID" class="form-control" id="itemmIDId" name="itemID" [(ngModel)]="item.itemId" #id="ngModel" required/>
+      <br>
+      <span *ngIf="id.invalid && (id.dirty || id.touched)" class="alert">
+        <span *ngIf="id.errors?.['required']" class="alert">
+          Item ID is required.
+        </span>
+        </span>
+      </div>
+        <div>
+          <label><h2>Item Name</h2></label>
+          <br>
+          <input type="text" placeholder="Enter Item Name" class="form-control" id="restaurantNameId" name="restaurantName" 
+          [(ngModel)]="item.itemName" #name="ngModel" required>
+          <br>
+          <span *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+            <span *ngIf="name.errors?.['required']" class="alert">
+              Item Name is required.
+            </span>
+            </span>
+        </div>
+        <div>
+          <label><h2>Category</h2></label>
+          <br>
+          <input type="text" placeholder="Enter Category" class="form-control" id="categoryId" name="category" 
+          [(ngModel)]="item.category" #category="ngModel" required>
+          <br>
+          <span *ngIf="category.invalid && (category.dirty || category.touched)" class="alert">
+       
+            <span *ngIf="category.errors?.['required']" class="alert">
+                Category is required.
+            </span>
+            </span>
+        </div>
+      <div>
+          <label><h2>Cost</h2></label>
+          <br>
+          <input type="text" placeholder="Enter Cost" class="form-control" id="costId" name="cost" 
+                [(ngModel)]="item.cost" #cost="ngModel" required>
+          <br>
+      <span *ngIf="cost.invalid && (cost.dirty || cost.touched)" class="alert">
+        <span *ngIf="cost.errors?.['required']" class="alert">
+            Cost is required.
+        </span>
+      </span>
+        </div>
+     
+      <div class="container">
+        <br>
+          <button type="submit" style="background-color:green; float: left; font-size: 22px; margin-left: 40%;" [disabled]="courseApp.form.invalid" id="btn" value="Submit"  class="btn btn-primary">Update</button>&nbsp;&nbsp;
+          <button type="reset"  style="background-color:blue; float: left; font-size: 22px; margin-left:2%;" id="btn" value="Reset"  class="btn btn-primary">Reset</button>
+        </div>
+        <br>
+        <br><br><br>
+      </form>
+    </div>
+  </body>
+
+  <!--style="background-color:blue; float: left; font-size: 22px; margin-left: 40%;
+  style="background-color:green; float: left; font-size: 22px; margin-left:2%;"-->

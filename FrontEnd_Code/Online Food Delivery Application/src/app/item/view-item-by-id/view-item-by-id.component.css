@@ -1,0 +1,27 @@
+
+body{
+    font-size: 22px;
+    background-color: rgba(255,255,0,0.4);
+}
+h2{
+    text-align: center;
+    color: brown;
+}
+h4{
+    font-weight: bold;
+    font-size: 20px;
+}
+th{ 
+    color: rgb(133, 44, 4);
+} 
+.btn{
+    
+    font-size: 20px;
+    background-color: blue; 
+    float: left;
+    
+}
+
+span{
+    color: red;
+}
