@@ -1,0 +1,32 @@
+<body>
+    <button class="btn btn-primary" style="background-color:blue; float: left; font-size: 22px;" (click)="goToHome()">Home</button>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+<h2><u>Update Order</u></h2>
+<div class="col-md-6 offset-md-2">
+    <form #myform="ngForm" style="margin-left: 20%;border-left-color: darkblue;" (ngSubmit)="doUpdateOrders(myform['value'])">
+        <div class="form-group">
+            <label><h2>Order Id </h2></label>
+            <input type="text" class="form-control" id="ordid" name="orderId"
+                value="{{orderId}}"/>
+        </div>
+    
+       
+    
+        <div class="form-group">
+            <label><h2>Set New orderStatus </h2></label>
+            <select class="browser-default custom-select" id="orderStatus" #orderStatus="ngModel" [(ngModel)]="newOrderStatus" name="orderStatus" aria-placeholder="Choose Status">
+                <option value="Placed">Placed</option>
+                <option value="Dispatched">Dispatched</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Delivered">Delivered</option>
+                
+            </select>
+        </div>
+    <!--[(ngModel)]="newOrderStatus",-->
+        <div>
+            <button class="btn btn-success" style="background-color: green;" type="submit">Update</button><br><br>
+        </div>
+        
+    </form>
+    </div>
+</body>

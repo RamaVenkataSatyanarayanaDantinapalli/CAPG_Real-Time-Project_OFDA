@@ -1,0 +1,27 @@
+<body>
+    <button class="btn btn-primary" style="background-color:blue; float: left; font-size: 22px;" (click)="goToHome()">Home</button>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+<div class="col-md-6 offset-md-3">
+    <h2><u> Create Orders </u></h2>
+    <form #myform (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+            <label><b><h2> Date</h2></b></label>
+            <input type="date" class ="form-control" id = "date" [(ngModel)] = "order.orderDate"
+                name = "orderDate">
+        </div>
+        <div class="form-group">
+            <label><b><h2>order Status</h2></b></label>
+            <select class="browser-default custom-select" id="orderStatus" #orderStatus="ngModel" [(ngModel)]="order.orderStatus" name="orderStatus" aria-placeholder="Choose Status">
+                <option value="Placed">Placed</option>
+                <option value="Dispatched">Dispatched</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Delivered">Delivered</option>
+                
+            </select>
+            <!--<input type="text" class ="form-control" id = "status"
+            [(ngModel)] = "order.orderStatus" name = "orderStatus">-->
+        </div>
+<!--[(ngModel)] = "order.orderStatus"[(ngModel)] = "order.orderDate" -->
+        <button class = "btn btn-success" type ="submit">Create</button>&nbsp;&nbsp;&nbsp;
+        <button type="reset" id="btn" value="Reset"  class="btn btn-primary">Reset</button>
+    </form>

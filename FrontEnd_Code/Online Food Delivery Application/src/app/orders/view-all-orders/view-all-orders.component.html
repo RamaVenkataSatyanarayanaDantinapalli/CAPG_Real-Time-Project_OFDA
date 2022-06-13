@@ -1,0 +1,41 @@
+<body>
+    <button class="btn btn-primary" style="background-color:blue; float: left; font-size: 22px;" (click)="goToHome()">Home</button>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+    <h2><u>View All Orders</u></h2><br>
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+</div>
+    <div class="container">
+    <table class="table table-stripped">
+        <thead class="thread-light">
+        <tr>
+            <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortOrdersById()">Order_ID</button></th>
+            <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortOrdersByDate()">Order_Date</button></th>
+            <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortOrdersByStatus()">Order_Status</button></th>
+        </tr>
+    
+        </thead>
+        <tbody>
+        <tr *ngFor="let order of orders |filter:term | paginate:{ id:'abc',itemsPerPage:5,currentPage:page,totalItems:totalRecords}">
+            <td><h4>{{order.orderId}}</h4></td>
+            <td><h4>{{order.orderDate}}</h4></td>
+           <!-- <td>{{order.restaurant[0]?.['restaurantName']}}</td>
+            <td>{{order.listOfItems}}['restaurantName']</td>--> 
+            <td><h4>{{order.orderStatus}}</h4></td>
+            <td><button class="btn btn-primary" style="background-color:green" (click) = "updateOrders(order.orderId,order.orderStatus)"> Update</button></td>
+            <td><button class="btn btn-danger" style="background-color:red"(click) = "deleteOrders(order.orderId)"> Delete</button></td>
+            <td><button class="btn btn-info" style="background-color:blue" (click) ="orderDetails(order.orderId)"> View</button></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<div class="col-md-10 offset-md-4">
+    <pagination-controls id="abc" maxSixe="10" directionLink="true" (pageChange)="page=$event"></pagination-controls>
+    
+</div>
+<br>
+<h1 style="margin-left: 17%; font-style: italic;font-weight: bold;">**Note : Sorting(Ascending and Descending) of Orders can be done by clicking on headings.</h1>
+<br>
+</body>
+    
+

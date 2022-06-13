@@ -1,0 +1,35 @@
+<body>
+   <button class="btn btn-primary" style="background-color:blue; float: left; font-size: 22px;" (click)="goToHome()">Home</button>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button><br><br>
+<div>
+   <div>
+      <h2><u>VIEW  DETAILS OF {{order.orderId}} ORDER</u></h2>
+      <label><b>OrderId: </b></label>{{order.orderId}}
+      <!--{{Orders.orderId}}{{Orders.orderDate}}-->
+   </div>
+   <div>
+      
+      <label><b>OrderDate: </b></label>{{order.orderDate}}
+   </div>
+   <div>
+     <!-- "buildingName": "varam",
+                "area": "gara",
+                "streetNo": 297,
+                "city": "srikakulam",
+                "state": "andhra pradesh",
+                "country": "india",
+                "pincode": 532405
+               "managerName": "kishore",
+            "contactNumber": "9908536243"
+         <label><b>address: </b></label>{{order.restaurant.address?.['buildingName']}}-->
+      <label><b>OrderStatus: </b></label>{{order.orderStatus}}<br>
+      <label><b>Restaurant Id: </b></label>{{order.restaurant[0]?.['restaurantId']}}<br>
+      <label><b>Restaurant Name: </b></label>{{order.restaurant[0]?.['restaurantName']}}<br>
+      
+      <label><b>Restaurant Manager Name: </b></label>{{order.restaurant[0]?.['managerName']}}<br>
+      <label><b>contact Number: </b></label>{{order.restaurant[0]?.['contactNumber']}}<br>
+      
+   </div>
+   
+</div>
+</body>
