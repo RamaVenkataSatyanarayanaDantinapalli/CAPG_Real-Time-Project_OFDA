@@ -1,0 +1,41 @@
+<body>
+    <button class="btn btn-primary" (click)="goToHome()">Home</button>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+<h2><u>View All Restaurants</u></h2><br>
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search By Restaurant ID | Restaurant Name | City | State | Pincode | Area | Building Name | Street Number | Manager Name | Contact Number | Country " [(ngModel)]="term">
+</div>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead class="thread-light">
+            <tr>
+                <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortRestaurantsById()">Restaurant_ID</button></th>
+                <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortRestaurantsByName()">Restaurant_Name</button></th>
+                <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortRestaurantsByCity()">Address</button></th>
+                <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortRestaurantsByManagerName()">Manager_Name</button></th>
+                <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortRestaurantsByContact()">Contact_Number</button></th>
+                <th>Items</th>
+            </tr>
+    </thead>
+    <tbody>
+   <tr *ngFor="let restaurant of restaurants | filter:term | paginate:{ id:'abc',itemsPerPage:3,currentPage:page,totalItems:totalRecords}">
+    <td><h4>{{restaurant.restaurantId}}</h4></td>
+    <td><h4>{{restaurant.restaurantName}}</h4></td>
+    <td><h4>{{restaurant.address.buildingName}},{{restaurant.address.area}},{{restaurant.address.streetNo}},
+        {{restaurant.address.city}},{{restaurant.address.state}},{{restaurant.address.country}},{{restaurant.address.pincode}}</h4></td>
+  <td><h4>{{restaurant.managerName}}</h4></td>
+    <td><h4>{{restaurant.contactNumber}}</h4></td>
+        <td><button class="btn btn-primary" style="background-color: #FF4500" (click)="getRestaurantItems(restaurant.restaurantName)">View Items</button></td>
+        <td><button class="btn btn-primary" style="background-color: blue" (click)="getRestaurantById(restaurant.restaurantId)">View</button></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<div class="col-md-10 offset-md-4">
+    <pagination-controls id="abc" maxSixe="10" directionLink="true" (pageChange)="page=$event"></pagination-controls>
+</div>
+<br>
+<h1 style="margin-left: 17%; font-style: italic;font-weight: bold;">**Note : Sorting(Ascending and Descending) of Restaurants can be done by clicking on headings.</h1>
+<br>
+</body>
