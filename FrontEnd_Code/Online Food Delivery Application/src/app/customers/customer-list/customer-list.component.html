@@ -1,0 +1,31 @@
+<body>
+    <button class="btn btn-primary" (click)="goToHome()">Home</button>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+<h2><u>View All Customers</u></h2><br>
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search By Customer ID | Customer First Name | Customer First Name | Email ID | Mobile Number" [(ngModel)]="term">
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Customer Id </th>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> Email Id </th>
+            <th> MobileNumber </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let customer of customers| filter:term">
+            <td> <h4>{{ customer.customerId }}</h4></td>
+            <td> <h4> {{ customer.firstName }}</h4></td>
+            <td> <h4>{{ customer.lastName }}</h4></td>
+            <td> <h4>{{ customer.email }}</h4></td>
+            <td> <h4>{{ customer.mobileNumber }}</h4></td>
+            <td> <button (click)="editCustomer(customer.customerId)" class="btn btn-info" >Edit</button></td>
+        </tr>
+    </tbody>
+
+</table>
+</body>

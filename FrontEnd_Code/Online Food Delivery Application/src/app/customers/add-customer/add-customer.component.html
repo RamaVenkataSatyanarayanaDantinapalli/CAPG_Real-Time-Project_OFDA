@@ -1,0 +1,45 @@
+<body>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="login()" class="btn btn-primary">Login</button>
+    <h2><u>Register User</u></h2>
+<div class="col-md-8 offset-md-3">
+    <form #courseApp="ngForm" (ngSubmit) = "onSubmit()">
+        
+        <div class="form-group">
+            <label> First Name </label>
+            <input type="text" class="form-control" id ="firstName" [(ngModel)] = "customer.firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+            <label> Last Name </label>
+            <input type="text" class="form-control" id ="lastName" [(ngModel)] = "customer.lastName" name="lastName">
+        </div>
+
+        <div class="form-group">
+            <label> Gender </label>
+            <input type="text" class="form-control" id ="gender" [(ngModel)] = "customer.gender" name="gender">
+        </div>
+
+        <div class="form-group">
+            <label> Age </label>
+            <input type="number" class="form-control" id ="age" [(ngModel)] = "customer.age" name="Age">
+        </div>
+
+        <div class="form-group">
+            <label> MobileNumber </label>
+            <input type="number" class="form-control" id ="mobileNumber" [(ngModel)] = "customer.mobileNumber" name="mobileNumber">
+        </div>
+
+        <div class="form-group">
+            <label> Email Id</label>
+            <input type="email" class="form-control" id ="emailId" [(ngModel)] = "customer.email" name="email">
+        </div>
+        <div class="container">
+            <br>
+              <button type="submit" style="background-color:green; float: left; font-size: 22px; margin-left: 40%;" [disabled]="courseApp.form.invalid" id="btn" value="Submit"  class="btn btn-primary">Next</button>
+              <button type="reset" style="background-color:blue; float: left; font-size: 22px; margin-left:2%;" id="btn" value="Reset"  class="btn btn-primary">Reset</button>
+            </div>
+            <br>
+            <br><br>
+    </form>
+</div>
+</body>
