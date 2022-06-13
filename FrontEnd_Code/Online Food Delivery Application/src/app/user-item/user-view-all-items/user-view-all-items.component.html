@@ -1,0 +1,34 @@
+<body>
+    <button class="btn btn-primary" (click)="goToHome()">Home</button>
+    <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+<h2><u>View All Items</u></h2><br>
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search By Item ID | Item Name | Category | Cost" [(ngModel)]="term">
+</div>
+<div class="container">
+    <table class="table table-striped">
+        <thead class="thread-light">
+            <tr>
+                <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortItemsById()">Item_ID</button></th>
+                <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortItemsByName()">Item_Name</button></th>
+                <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortItemsByCategory()">Category</button></th>
+                <th><button class="btn btn-primary" style="background-color:black;"  (click)="sortItemsByCost()">Cost</button></th>
+            </tr>
+    </thead>
+    <tbody>
+   <tr *ngFor="let item of items | filter:term | paginate:{ id:'abc',itemsPerPage:5,currentPage:page,totalItems:totalRecords}">
+        <td><h4>{{item.itemId}}</h4></td>
+        <td><h4>{{item.itemName}}</h4></td>
+        <td><h4>{{item.category}}</h4></td>
+        <td><h4>{{item.cost}}</h4></td>
+    <td><button class="btn btn-primary" (click)="getItemById(item)">View</button></td>
+    </tr>
+</tbody>
+    </table>
+</div>
+<div class="col-md-10 offset-md-4">
+    <pagination-controls id="abc" maxSixe="10" directionLink="true" (pageChange)="page=$event"></pagination-controls>
+</div><br>
+<h1 style="margin-left: 17%; font-style: italic;font-weight: bold;">**Note : Sorting(Ascending and Descending) of items can be done by clicking on headings.</h1>
+<br>
+</body>
