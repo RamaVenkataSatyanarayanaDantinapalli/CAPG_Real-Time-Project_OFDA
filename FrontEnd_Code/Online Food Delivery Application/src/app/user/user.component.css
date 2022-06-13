@@ -1,0 +1,45 @@
+body{
+    background-color:rgba(255,255,0,0.4);
+}
+ h1{
+    color: chocolate;
+    font-style: italic;
+    font-size: large;
+}
+h2{
+    font-size: 25px;
+    color: brown;
+    text-align: center;
+}
+
+a{
+    font-size: 20px;
+    font-style: italic;
+    color:black;
+    background-color:rgba(255,255,0,0.4);
+}
+select{
+    font-size: 30px;
+    background-color:black;
+    color:white
+}
+
+nav{
+    background-color: rgba(255,255,0,0.0);
+}
+
+.container1{
+    background-color: #37b9bb8c;
+}
+
+.btn{
+   
+    font-size: 30px;
+    background-color: green; 
+}
+select{
+    font-size: 30px;
+}
+label{
+    font-size: 30px;
+}
