@@ -1,0 +1,25 @@
+body{
+    background-color: rgba(255,255,0,0.4);
+    font-size: 20px;
+}
+h1{
+    text-align: center;
+    color: brown;
+    font-size: 25px;
+}
+h2{
+    text-align: center;
+    color: brown;
+}
+.btn{
+    margin:0 auto;
+    font-size: 25px;
+    background-color: red;
+    float: right;
+    margin-left: 1%;
+    margin-right: 0%;
+}
+
+span{
+    color:red;
+}

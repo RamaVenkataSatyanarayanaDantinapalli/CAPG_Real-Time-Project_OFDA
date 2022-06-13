@@ -1,0 +1,26 @@
+
+body{
+    font-size: 22px;
+    background-color: rgba(255,255,0,0.4);
+    font-weight: bold;
+}
+h2{
+    text-align: center;
+    color: brown;
+}
+
+.btn{
+    margin:0 auto;
+    font-size: 20px;
+    background-color: blue; 
+    float: left;
+    
+}
+label{
+    color: brown;
+    font-size: 20px;
+}
+
+span{
+    color:red;
+}

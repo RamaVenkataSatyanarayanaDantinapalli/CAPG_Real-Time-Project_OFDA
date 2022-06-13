@@ -1,0 +1,70 @@
+<body>
+    <button class="btn btn-primary" (click)="goToHome()">Home</button>
+      <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+  <h2><u>Add Restaurant</u></h2>
+  <div class="col-md-8 offset-md-3">
+    
+      <form #courseApp="ngForm" (ngSubmit) ="onSubmit()">
+          <br>
+        <!--<div>
+            <label><h2>Restaurant ID</h2></label>
+            <input type="number" placeholder="Enter Restaurant ID" class="form-control"  id="restaurantIDId" name="restaurantID" [(ngModel)]="restaurant.restaurantId" #id="ngModel" required/>
+        <br>
+        <span *ngIf="id.invalid && (id.dirty || id.touched)" class="alert">
+          <span *ngIf="id.errors?.['required']" class="alert">
+            Restaurant ID is required.
+          </span>
+          </span>
+        </div>-->
+          <div>
+            <label><h2>Restaurant Name</h2></label>
+            <br>
+            <input type="text" placeholder="Enter Restaurant Name" class="form-control" id="restaurantNameId" name="restaurantName" 
+            [(ngModel)]="restaurant.restaurantName" #name="ngModel" required>
+            <br>
+            <span *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+              <span *ngIf="name.errors?.['required']" class="alert">
+                Restaurant Name is required.
+              </span>
+              </span>
+          </div>
+          <div>
+          
+            <label><h2>Manager Name</h2></label>
+            <br>
+            <input type="text" placeholder="Enter Manager Name" class="form-control" id="managerNameId" name="managerName" 
+            [(ngModel)]="restaurant.managerName" #mname="ngModel" required>
+            <br>
+            <span *ngIf="mname.invalid && (mname.dirty || mname.touched)" class="alert">
+         
+              <span *ngIf="mname.errors?.['required']" class="alert">
+                  Manager Name is required.
+              </span>
+              </span>
+          </div>
+        <div>
+            <label><h2>Contact Number</h2></label>
+            <br>
+            <input type="text" placeholder="Enter Contact Number" class="form-control" id="contactNumberId" name="contactNumber" 
+                  [(ngModel)]="restaurant.contactNumber" #cnumber="ngModel" required>
+            <br>
+        <span *ngIf="cnumber.invalid && (cnumber.dirty || cnumber.touched)" class="alert">
+          <span *ngIf="cnumber.errors?.['required']" class="alert">
+              Contact Number is required.
+          </span>
+        </span>
+          </div>
+          <!--<br>
+          <button class="btn btn-primary" style="background-color: green;" (click)="goToUpdateRestaurantAddress()">Update Address</button>
+          <button class="btn btn-primary" style="background-color: green; margin-left: 2%;">Update Items</button>
+  <br>-->
+          <div class="container">
+            <br>
+              <button type="submit" style="background-color:green; float: left; font-size: 22px; margin-left: 40%;" [disabled]="courseApp.form.invalid" id="btn" value="Submit"  class="btn btn-primary">Next</button>&nbsp;&nbsp;
+              <button type="reset"  style="background-color:blue; float: left; font-size: 22px; margin-left:2%;" id="btn" value="Reset"  class="btn btn-primary">Reset</button>
+            </div>
+          <br>
+        </form>
+      </div>
+  
+    </body>

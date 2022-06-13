@@ -1,0 +1,91 @@
+<body>
+    <button class="btn btn-primary" (click)="goToHome()">Home</button>
+      <button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+  <h2><u>Update Restaurant Address</u></h2>
+  <div class="col-md-8 offset-md-3">
+    
+      <form #courseApp="ngForm" (ngSubmit) ="onSubmit()">
+          <div>
+          <label>Building Name</label>
+            <input type="text" placeholder="Enter Building Name" class="form-control" id="restaurantBuildingId" name="restaurantBuilding" 
+            [(ngModel)]="address.buildingName" #buildName="ngModel" required>
+           
+            <span *ngIf="buildName.invalid && (buildName.dirty || buildName.touched)" class="alert">
+              <span *ngIf="buildName.errors?.['required']" class="alert">
+                Building Name is required.
+              </span>
+              </span>
+          </div>
+          <div>
+            <label>Area</label>
+              <input type="text" placeholder="Enter Area" class="form-control" id="areaId" name="area" 
+            [(ngModel)]="address.area" #area="ngModel" required>
+            <span *ngIf="area.invalid && (area.dirty || area.touched)" class="alert">
+              <span *ngIf="area.errors?.['required']" class="alert">
+                Area is required.
+              </span>
+              </span>
+          </div>
+
+          <div>
+            <label>Street Number</label>
+              <input type="text" placeholder="Enter Street Number" class="form-control" id="streetNoId" name="streetNo" 
+            [(ngModel)]="address.streetNo" #srtNo="ngModel" required>
+            <span *ngIf="srtNo.invalid && (srtNo.dirty || srtNo.touched)" class="alert">
+              <span *ngIf="srtNo.errors?.['required']" class="alert">
+                Street Number is required.
+              </span>
+              </span>
+          </div>
+          <div>
+            <label>City</label>
+              <input type="text" placeholder="Enter City" class="form-control" id="cityId" name="city" 
+            [(ngModel)]="address.city" #city="ngModel" required>
+            <span *ngIf="city.invalid && (city.dirty || city.touched)" class="alert">
+              <span *ngIf="city.errors?.['required']" class="alert">
+                City is required.
+              </span>
+              </span>
+          </div>
+
+          <div>
+            <label>State</label>
+              <input type="text" placeholder="Enter City" class="form-control" id="stateId" name="state" 
+            [(ngModel)]="address.state" #state="ngModel" required>
+            <span *ngIf="state.invalid && (state.dirty || state.touched)" class="alert">
+              <span *ngIf="state.errors?.['required']" class="alert">
+                State is required.
+              </span>
+              </span>
+          </div>
+          <div>
+            <label>Country</label>
+              <input type="text" placeholder="Enter Country" class="form-control" id="countryId" name="country" 
+            [(ngModel)]="address.state" #country="ngModel" required>
+            <span *ngIf="country.invalid && (country.dirty || country.touched)" class="alert">
+              <span *ngIf="country.errors?.['required']" class="alert">
+                Country is required.
+              </span>
+              </span>
+          </div>
+          <div>
+            <label> Pincode</label>
+              <input type="text" placeholder="Enter Pincode" class="form-control" id="pincodeId" name="pincode" 
+            [(ngModel)]="address.pincode" #pincode="ngModel" required>
+            <span *ngIf="pincode.invalid && (pincode.dirty || pincode.touched)" class="alert">
+              <span *ngIf="pincode.errors?.['required']" class="alert">
+                Pincode is required.
+              </span>
+              </span>
+          </div>
+       
+          <div class="container">
+            <br>
+              <button type="submit" style="background-color:green; float: left; font-size: 22px; margin-left: 40%;" [disabled]="courseApp.form.invalid" id="btn" value="Submit"  class="btn btn-primary">Update</button>&nbsp;&nbsp;
+              <button type="reset"  style="background-color:blue; float: left; font-size: 22px; margin-left:2%;" id="btn" value="Reset"  class="btn btn-primary">Reset</button>
+            </div>
+          <br>
+        </form>
+      </div>
+  
+    </body>
