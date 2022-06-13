@@ -1,0 +1,55 @@
+<body>
+<div>
+<button style="background-color:red; float: right; font-size: 22px;" (click)="logout()" class="btn btn-primary">Logout</button>
+<h2><u>Home</u></h2>
+</div>
+<br><br>
+<div class="dropdown">
+  <table>
+    <tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <td><label><u>Manage Restaurants</u></label><br>
+  <select id="menu1" name="menu1" #menu1 (change)="navigateToRestaurant(menu1.value)">
+    <option>Choose Your Option</option>
+    <option>Add Restaurant</option>
+    <option>View All Restaurants</option>
+    <option>View Restaurant By ID</option>
+    <option>View Restaurants By Name</option>
+    <option>View Restaurants By Pincode</option>
+    <option>View Restaurants By City</option>
+    <option>View Restaurants By Item</option>
+  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <!--<button class="btn btn-primary" [disabled] (click)="navigateToRestaurant(menu1.value)">Go</button></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+  <td><label><u>Manage Items</u></label><br>
+    <select id="menu2" name="menu2" #menu2 (change)="navigateToItem(menu2.value)">
+      <option>Choose Your Option</option>
+      <option>Add Item</option>
+      <option>View All Items</option>
+      <option>View Item By ID</option>
+      <option>View Items By Name</option>
+      <option>View Items By Category</option>
+      <option>View Items By Restaurant</option>
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!--<button class="btn btn-primary" [disabled] (click)="navigateToItem(menu2.value)">Go</button></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+    <td><label><u>Manage Orders</u></label><br>
+      <select id="menu3" name="menu3" #menu3 (change)="navigateToOrder(menu3.value)">
+        <option>Choose Your Option</option>
+        <option>Add Order</option>
+        <option>View All Orders</option>
+      </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!--<button class="btn btn-primary" [disabled] (click)="navigateToOrder(menu3.value)">Go</button></td>-->
+      <td><label><u>Manage Customers</u></label><br>
+        <select id="menu4" name="men4" #menu4 (change)="navigateToCustomer(menu4.value)">
+          <option>Choose Your Option</option>
+          <option>Add Customer</option>
+          <option>View All Customers</option>
+        </select>
+        <!--<button class="btn btn-primary" [disabled] (click)="navigateToCustomer(menu4.value)">Go</button></td>-->
+</tr>
+</table>
+</div>
+
+<!--<div class="container1" style="margin-top: 2%; margin-bottom:4%; margin-left: 6%; margin-right: 6%;" >
+  <router-outlet></router-outlet>
+</div>-->
+<br><br>
+</body>

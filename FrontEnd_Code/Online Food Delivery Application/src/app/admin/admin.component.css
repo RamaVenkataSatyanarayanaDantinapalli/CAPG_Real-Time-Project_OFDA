@@ -1,0 +1,52 @@
+
+ h1{
+    color: chocolate;
+    font-style: italic;
+    font-size: large;
+}
+h2{
+    color: brown;
+    font-size: 25px;
+    text-align: center;
+}
+body{
+    background-color:rgba(255,255,0,0.4);
+    margin-left: 0px;
+}
+a{
+    font-size: 20px;
+    font-style: italic;
+    color:black;
+    background-color:rgba(255,255,0,0.4);
+}
+
+nav{
+    background-color: rgba(255,255,0,0.0);
+}
+
+.container1{
+    background-color: #37b9bb8c;
+}
+
+.btn{
+   
+    font-size: 30px;
+    background-color: green;
+}
+.btn1{
+        margin:0 auto;
+        font-size: 25px;
+        background-color: red;
+        float: right;
+        margin-left: 2%;
+        margin-right: -1%;
+        color:aliceblue;
+    }
+select{
+    font-size: 30px;
+    background-color:black;
+    color:white
+}
+label{
+    font-size: 30px;
+}
